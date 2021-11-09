@@ -66,7 +66,7 @@ class Login extends StatelessWidget {
                 VSpace.md,
                 TextInputField(
                   onSaved: provider.setPassword,
-                  validator: isPassword,
+                  // validator: isPassword,
                   obscureText: true,
                   suffixIcon: Icon(Icons.remove_red_eye_outlined),
                   labelText: "Password",

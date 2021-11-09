@@ -48,7 +48,8 @@ class LoginProvider extends BaseProvider {
 
       setLoading(true);
 
-      final String url = "https://user-authh.herokuapp.com/api/v1/user/signin";
+      final String url =
+          "https://user-authh.herokuapp.com/api/v1/user/auth/signin";
 
       final payload = {"email": state.email, "password": state.pwd};
 
