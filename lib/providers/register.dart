@@ -72,12 +72,14 @@ class RegisterProvider extends BaseProvider {
             .pushNamedAndRemoveUntil(Dashboard.route, (route) => false);
       }
     } on DioError catch (err) {
+      setLoading(false);
       if (err.response!.statusCode == 404) {
         showSankBar("user account does not exists");
       }
       if (err.response!.statusCode == 400) {
         showSankBar("Incorrect email address or password");
       }
+      
     } on InAppError catch (err) {
       setLoading(false);
       err.log();

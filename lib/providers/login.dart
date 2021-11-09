@@ -59,6 +59,7 @@ class LoginProvider extends BaseProvider {
       Navigator.of(state.context!)
           .pushNamedAndRemoveUntil(Dashboard.route, (route) => false);
     } on DioError catch (err) {
+      setLoading(false);
       if (err.response!.statusCode == 404) {
         showSankBar("user account does not exists");
       }
